@@ -1,0 +1,24 @@
+class Solution {
+    int thirdLargest(int arr[]) {
+        // Your code here
+        int first = Integer.MIN_VALUE;
+        int second = Integer.MIN_VALUE;
+        int third = Integer.MIN_VALUE;
+        
+        for(int nums:arr){
+            if(nums > first){
+                third = second;
+                second = first;
+                first = nums;
+            }
+            else if(nums > second){
+                third = second;
+                second = nums;
+            }
+            else if(nums > third){
+                third = nums;
+            }
+        }
+        return third;
+    }
+}
